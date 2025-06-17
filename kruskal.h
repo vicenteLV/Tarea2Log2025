@@ -5,7 +5,6 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "random.cpp"
 #include "unionFind.cpp"
 using namespace std;
 
@@ -14,8 +13,8 @@ estructura para representar aristas, x es el nodo de salida, y el de llegada
 y peso la distancia euclidiana al cuadrado
 */
 typedef struct {
-    int x;
-    int y;
+    int i;
+    int j;
     double peso;
 
     //sobrecarga de < para orden ascendente en sort

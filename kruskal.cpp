@@ -16,21 +16,45 @@ de UnionFind que ayuda a trackear nodos y un valor booleano que indica si se usa
 funciones find optimizadas o no, retorna un vector de aristas que conforman el MST
 [vector<Arista> UnionFind bool] -> vector<Arista>
 */
-vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind nodos, bool optimizacion){
-    int n = nodos.padre.size();
+vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind& nodos,
+    bool optimizacion){
+    
+    int n = nodos.getPadreSize();
     vector<Arista> T;
+    T.reserve(n-1); //el MST tiene n-1 aristas
 
     int k = 0;
-    while(T.size()<((n*(n-1))/2) && k<aristas_ordenadas.size()){
-        Arista menor_actual = aristas_ordenadas[k];
-        int nodo_x = menor_actual->i;
-        int nodo_y = menor_actual->j;
-
-        if(optimizacion){
-            nodos.find_opt() 
+    while(T.size()<n-1 && k<aristas_ordenadas.size()){
+        if(T.size()==(n-1)/4 || T.size()==2*((n-1)/4) || T.size()==3*((n-1)/4)){
+            int avance = (T.size()/(n-1)) * 100;
+            cout << avance << " de avance en esta secuencia..." << endl;
         }
 
+        Arista menor_actual = aristas_ordenadas[k];
+        int nodo_i = menor_actual.i;
+        int nodo_j = menor_actual.j;
+
+        int raiz_i, raiz_j;
+
+        //operacion find depende de la optimizacion que se le haya dado o no
+        if(optimizacion){
+            raiz_i = nodos.find_opt(nodo_i);
+            raiz_j = nodos.find_opt(nodo_j);
+        } else{
+            raiz_i = nodos.find(nodo_i);
+            raiz_j = nodos.find(nodo_j);
+        }
+
+        if(raiz_i != raiz_j){
+            T.push_back(menor_actual);
+            
+            if(optimizacion){
+                nodos.unir(nodo_i, nodo_j);
+            }else{
+                nodos.unir_opt(nodo_i,nodo_j);
+            }
+        }
+        k++;
     }
-    
-    
+    return T;    
 }

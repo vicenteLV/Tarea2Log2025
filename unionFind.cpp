@@ -20,6 +20,14 @@ class UnionFind{
         }
 
         /*
+        funcion getter para tamaño de arreglo de nodos
+        void -> int
+        */
+        int getPadreSize() const{
+            return padre.size();
+        }
+
+        /*
         funcion find sin optimización
         toma un entero que representa un nodo y devuelve 
         el indice del padre asociado a tal nodo en el arreglo padres
