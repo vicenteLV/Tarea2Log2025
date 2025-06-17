@@ -8,8 +8,8 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "unionFind.cpp"
 #include "kruskal.h"  
+#include "unionFind.cpp"
 #include "random.cpp"
 
 using namespace std;

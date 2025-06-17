@@ -6,7 +6,7 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "kruskal.h"
+#include "arista.h"
 using namespace std;
 
 /*

@@ -5,7 +5,6 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "kruskal.h"
 #include "unionFind.cpp"
 #include "random.cpp"
 using namespace std;
