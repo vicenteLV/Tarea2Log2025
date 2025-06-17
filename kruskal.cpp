@@ -5,86 +5,26 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
+#include "kruskal.h"
+#include "unionFind.cpp"
+#include "random.cpp"
+using namespace std;
 
 /*
-estructura para representar aristas, x es el nodo de salida, y el de llegada
-y peso la distancia euclidiana al cuadrado
+funcion que recibe aristas ordenadas por sort en un arreglo, una instancia
+de UnionFind que ayuda a trackear nodos y un valor booleano que indica si se usarán 
+funciones find optimizadas o no, retorna un vector de aristas que conforman el MST
+[vector<Arista> UnionFind bool] -> vector<Arista>
 */
-typedef struct {
-    int x;
-    int y;
-    double peso;
-}Arista;
+vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind nodos, bool optimizacion){
+    int n = nodos.padre.size();
+    vector<Arista> T;
 
-/*
-funcion que genera el arreglo de pares ordenados que representa 
-cada nodo, creando cada par con random()
-int -> vector[pair[double, double]]
-*/
-std::vector<std::pair<double, double>> generarNodos(int n){
-    std::vector<std::pair<double, double>> nodos;
-    nodos.reserve(n); //guardamos espacio para n nodos
-    std::srand(std::time(0));
+    int k = 0;
+    while(T.size()<((n*(n-1))/2) && k<arista_ordenadas.size()){
+        aristas_ordenadas[k]
 
-    for( int i=0; i<n; i++){
-        nodos[i] = {
-            static_cast<double>(std::rand()) / RAND_MAX,
-            static_cast<double>(std::rand()) / RAND_MAX
-        };        
     }
-    return nodos;
-}
-
-/*
-funcion de comparacion para sort en la generacion de aristas
-[Arista Arista] -> bool*/
-bool comparacionPesos(const Arista& a, const Arista& b){
-    return a.peso < b.peso;
-}
-
-/*
-funcion que toma el arreglo de nodos generado aleatoriamente y calcula
-todas las aristas posibles para luego devolver un arreglo ordenado de menor a 
-mayor según peso
-[vector[pair[double, double]] int] -> vector[Arista]
-*/
-std::vector<Arista> generarArregloAristas(std::vector<std::pair<double, double>> nodos, int n){
-    std::vector<Arista> aristas;
-    aristas.reserve((n*(n-1))/2);
-
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            double dx = nodos[i].first - nodos[j].first;
-            double dy = nodos[i].second - nodos[j].second;
-            double peso = dx*dx + dy*dy;
-
-            aristas.push_back({i,j,peso});
-        }
-    }
-    std::sort(aristas.begin(), aristas.end(), comparacionPesos);
-    return aristas;
-}
-
-/*
-funcion que toma el arreglo de nodos generado aleatoriamente y calcula
-todas las aristas posibles para luego devolver una cola de prioridad de menor a 
-mayor según peso
-[vector[pair[double, double]] int] -> priority_queue(Arista)
-*/
-std::priority_queue<Arista, std::vector<Arista>, std::greater<Arista>> 
-generarColaAristas(const std::vector<std::pair<double,double>>& nodos, 
-    int n){
-
-    std::priority_queue<Arista, std::vector<Arista>, std::greater<Arista>> heap;
     
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            double dx = nodos[i].first - nodos[j].first;
-            double dy = nodos[i].second - nodos[j].second;
-            double peso = dx*dx + dy*dy;
-            heap.push({i,j,peso});
-        }
-    }
-
-    return heap;    
+    
 }
