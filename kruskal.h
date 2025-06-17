@@ -5,7 +5,6 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "unionFind.cpp"
 using namespace std;
 
 /*
@@ -31,3 +30,6 @@ typedef struct {
 
 
 vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind nodos, bool optimizacion){}
+
+vector<Arista> MST_heap(priority_queue<Arista,vector<Arista>,greater<Arista>> heap,
+    UnionFind& nodos, bool optimizacion){}
