@@ -21,8 +21,14 @@ vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind nodos, bo
     vector<Arista> T;
 
     int k = 0;
-    while(T.size()<((n*(n-1))/2) && k<arista_ordenadas.size()){
-        aristas_ordenadas[k]
+    while(T.size()<((n*(n-1))/2) && k<aristas_ordenadas.size()){
+        Arista menor_actual = aristas_ordenadas[k];
+        int nodo_x = menor_actual->i;
+        int nodo_y = menor_actual->j;
+
+        if(optimizacion){
+            nodos.find_opt() 
+        }
 
     }
     
