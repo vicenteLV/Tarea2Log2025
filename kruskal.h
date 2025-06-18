@@ -8,9 +8,11 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-using namespace std;
 #include "arista.h"
 
+class UnionFind;
+
+using namespace std;
 
 vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind& nodos, bool optimizacion);
 

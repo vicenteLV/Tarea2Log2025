@@ -5,8 +5,7 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "unionFind.cpp"
-#include "random.cpp"
+#include "kruskal.h"
 using namespace std;
 
 /*
@@ -24,11 +23,6 @@ vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind& nodos,
 
     int k = 0;
     while(T.size()<n-1 && k<aristas_ordenadas.size()){
-        if(T.size()==(n-1)/4 || T.size()==2*((n-1)/4) || T.size()==3*((n-1)/4)){
-            int avance = (T.size()/(n-1)) * 100;
-            cout << avance << " de avance en esta secuencia..." << endl;
-        }
-
         Arista menor_actual = aristas_ordenadas[k];
         int nodo_i = menor_actual.i;
         int nodo_j = menor_actual.j;
@@ -70,11 +64,6 @@ vector<Arista> MST_heap(priority_queue<Arista,vector<Arista>,greater<Arista>> he
     T.reserve(n-1);
 
     while(T.size()<(n-1) && !heap.empty()){
-        if(T.size()==(n-1)/4 || T.size()==2*((n-1)/4) || T.size()==3*((n-1)/4)){
-            int avance = (T.size()/(n-1)) * 100;
-            cout << avance << " de avance en esta secuencia..." << endl;
-        }
-
         Arista menor_actual = heap.top();
         heap.pop();
 

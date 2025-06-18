@@ -5,7 +5,7 @@
 estructura para representar aristas, x es el nodo de salida, y el de llegada
 y peso la distancia euclidiana al cuadrado
 */
-typedef struct {
+struct Arista{
     int i;
     int j;
     double peso;
@@ -20,6 +20,6 @@ typedef struct {
         return peso > otra.peso;
     }
 
-}Arista;
+};
 
 #endif

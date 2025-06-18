@@ -8,9 +8,10 @@
 #include <cmath>
 #include <algorithm>
 #include <queue>
-#include "kruskal.h"  
 #include "unionFind.cpp"
+#include "kruskal.h"  
 #include "random.cpp"
+#include "kruskal.cpp"
 
 using namespace std;
 using namespace chrono;
