@@ -85,7 +85,7 @@ int main(){
             archivo<<tiempo_var1<<","<<tiempo_var2<<","<<tiempo_var3<<",";
             archivo<<tiempo_var4<<"\n";
 
-            cout<<"Tiempos(ms) en pasada "<<pasada<<": Var1= "<<tiempo_var1<<"\n"<<"Var2= "<<tiempo_var2<<"\n"
+            cout<<"Tiempos(ms) en pasada "<<pasada<<":\nVar1= "<<tiempo_var1<<"\n"<<"Var2= "<<tiempo_var2<<"\n"
             <<"Var3= "<<tiempo_var3<<"\n"<<"Var4= "<<tiempo_var4<<"\n"<<endl;
         }
         cout<<endl;
