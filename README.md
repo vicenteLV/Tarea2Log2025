@@ -32,15 +32,15 @@ Compilación y ejecución
 
 Para compilar ejecutar este comando en la raiz dell repositorio
 
-´´´bash
+```bash
 g++ -o main main.cpp
-´´´
+```
 
 Para ejecutar los experimentos
 
-´´´bash
+```bash
 ./main
-´´´
+```
 
 Notas
 - El programa ejecuta automáticamente todos los experimentos (tamaños de 2^5 a 2^12 nodos, 5 repeticiones cada uno).
