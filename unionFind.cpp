@@ -1,6 +1,11 @@
 #include <vector>
 #include <iostream>
 
+/*
+clase para trackear nodos y sus padres, fundamental para
+algoritmo kruskal de MST, cuenta con dos vectores padre y altura
+que entregan información útil para las operaciones
+*/
 class UnionFind{
     private:
         std::vector<int> padre; //nodo padre del nodo 'i'

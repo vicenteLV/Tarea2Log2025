@@ -16,6 +16,14 @@
 using namespace std;
 using namespace chrono;
 
+
+/*
+funcion que corre los experimentos, genera 5 ciclos por cada exponente de 2 para
+n (5,...,12) no recibe parámettros y retorna 0.
+crea datos llamando a los archivos del proyecto, sus funciones (generarNodos, generarArregloAristas, etc.)
+y estructuras (Arista, clase UnionFind).
+void -> int
+*/
 int main(){
     //crear csv
     ofstream archivo("resultados_kruskal.csv");

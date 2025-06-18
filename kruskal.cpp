@@ -55,7 +55,8 @@ vector<Arista> MST_arreglo(vector<Arista> aristas_ordenadas, UnionFind& nodos,
 /*
 funcion que recibe cola de prioridad para heap, instancia de UnionFind, y valor
 booleano que indica si corresponde la optimizacion de las operaciones de find y unir
-[priority_queue UnionFind bool] -> vector<Arista>*/
+[priority_queue UnionFind bool] -> vector<Arista>
+*/
 vector<Arista> MST_heap(priority_queue<Arista,vector<Arista>,greater<Arista>> heap,
     UnionFind& nodos, bool optimizacion){
     
