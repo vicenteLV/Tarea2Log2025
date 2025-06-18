@@ -32,13 +32,13 @@ Compilación y ejecución
 
 Para compilar ejecutar este comando en la raiz dell repositorio
 
-´´´
+´´´bash
 g++ -o main main.cpp
 ´´´
 
 Para ejecutar los experimentos
 
-´´´
+´´´bash
 ./main
 ´´´
 
